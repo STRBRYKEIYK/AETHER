@@ -13,8 +13,21 @@ export default function Page() {
       <Navbar6 />
 
       {/* 1. Hero Section */}
-      <section className="bg-[#110D0A] pt-48 relative">
-        <div className="max-w-4xl mx-auto text-center px-[5%] mb-20 relative z-10">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#110D0A] pt-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero.jpg"
+            className="w-full h-full object-cover opacity-50"
+            alt="Real estate meeting"
+            onError={(e) => {
+              e.target.src = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#110D0A]/80 via-[#110D0A]/40 to-[#110D0A]"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center px-[5%] relative z-10 pb-20">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,20 +62,6 @@ export default function Page() {
               Learn more
             </button>
           </motion.div>
-        </div>
-
-        {/* Hero Image */}
-        <div className="w-full h-[60vh] md:h-[70vh] relative overflow-hidden">
-          <img
-            src="/images/hero.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-            alt="Real estate meeting"
-            onError={(e) => {
-              e.target.src = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000";
-            }}
-          />
-          {/* Subtle gradient overlay to blend top edge */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#110D0A] via-transparent to-transparent h-32"></div>
         </div>
       </section>
 

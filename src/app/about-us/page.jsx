@@ -4,360 +4,210 @@ import React from "react";
 import { Navbar6 } from "@/components/Navbar6";
 import { Footer10 } from "@/components/Footer10";
 import { motion } from "framer-motion";
-import { BiSolidStar } from "react-icons/bi";
-import { RxChevronRight } from "react-icons/rx";
+import { RxChevronRight, RxArrowRight } from "react-icons/rx";
 import { FaLinkedinIn, FaXTwitter, FaGlobe } from "react-icons/fa6";
 import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="min-h-screen font-body">
+    <div className="min-h-screen font-body bg-celestial-dark selection:bg-celestial-gold selection:text-celestial-dark overflow-hidden">
       <Navbar6 />
 
-      {/* 1. Hero Section */}
-      <section className="bg-[#110D0A] pt-48 pb-32 px-[5%] text-center border-b border-white/5">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-white font-bold text-xs mb-8 uppercase tracking-widest"
-        >
-          Trust
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-6xl md:text-8xl font-display font-bold text-white mb-8 uppercase tracking-tight leading-[1.1]"
-        >
-          Real estate,
-          <br />
-          reimagined
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-normal"
-        >
-          We built a marketplace where verified brokers and serious buyers meet without fear
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex justify-center gap-4"
-        >
-          <Link href="/properties" className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
-            Explore
-          </Link>
-          <Link href="/neighborhood-guides" className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
-            Learn more
-          </Link>
-        </motion.div>
+      {/* 1. Hero Section - Monolithic Vision */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-celestial-gold/5 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+          <div className="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-white/5 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
+          <div className="absolute inset-0 bg-celestial-dark/80"></div>
+        </div>
+
+        <div className="w-full max-w-[1400px] mx-auto px-[5%] relative z-10 flex flex-col md:flex-row items-end justify-between pb-20 pt-40">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <h2 className="text-celestial-gold font-display text-sm tracking-[0.3em] uppercase mb-6 flex items-center gap-4">
+                <span className="w-12 h-[1px] bg-celestial-gold"></span>
+                The Aether Vision
+              </h2>
+              <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-display font-light text-white uppercase tracking-tighter leading-[0.9] mb-8">
+                Absolute
+                <br />
+                <span className="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-gray-500">
+                  Trust
+                </span>
+              </h1>
+            </motion.div>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-md text-left md:text-right mt-12 md:mt-0"
+          >
+            <p className="text-gray-300 text-lg md:text-xl font-light mb-8 leading-relaxed border-l md:border-l-0 md:border-r border-celestial-gold/50 pl-6 md:pl-0 md:pr-6">
+              We built a marketplace where verified brokers and serious buyers meet without fear. No ghost properties. No shortcuts.
+            </p>
+            <div className="flex md:justify-end gap-6">
+              <Link href="/properties" className="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-celestial-dark font-display uppercase tracking-widest text-xs font-bold overflow-hidden transition-transform hover:scale-[1.02]">
+                <span className="absolute inset-0 bg-celestial-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]"></span>
+                <span className="relative flex items-center gap-2 group-hover:text-white transition-colors duration-500">
+                  Our Portfolio <RxArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* 2. Mission Section */}
-      <section className="bg-white py-32 px-[5%] text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-black font-bold text-xs uppercase tracking-widest mb-8">
-            Mission
-          </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-black uppercase leading-[1.3] mb-12">
-            We exist to eliminate fear from Philippine real estate. Every listing is verified, every broker is licensed, and every transaction is transparent.
+      {/* 2. Mission Statement */}
+      <section className="bg-[#0A0A0C] py-40 px-[5%] border-t border-white/5 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] md:text-[25rem] font-display font-bold text-white/[0.02] uppercase leading-none pointer-events-none whitespace-nowrap z-0">
+          MISSION
+        </div>
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <span className="w-12 h-[1px] bg-celestial-gold"></span>
+            <p className="text-celestial-gold font-display text-xs uppercase tracking-[0.2em]">Our Purpose</p>
+            <span className="w-12 h-[1px] bg-celestial-gold"></span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-light text-white uppercase leading-[1.2] mb-12">
+            We exist to eliminate friction from Philippine real estate. Every listing is <span className="font-bold italic text-celestial-gold">verified</span>, every broker is <span className="font-bold italic text-celestial-gold">licensed</span>, and every transaction is <span className="font-bold italic text-celestial-gold">transparent</span>.
           </h2>
-          <div className="flex justify-center items-center gap-6">
-            <Link href="/neighborhood-guides" className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
-              Learn more
-            </Link>
-            <Link href="/properties" className="text-black font-semibold text-sm flex items-center gap-1 group">
-              Explore <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* 3. Three Pillars Section */}
-      <section className="bg-[#2C2724] py-32 px-[5%] text-center">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mx-auto mb-20">
-            <p className="text-white font-bold text-xs uppercase tracking-widest mb-6">
-              Built on
-            </p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight mb-8 leading-tight">
-              Three pillars that define
+      {/* 3. Three Pillars Section - Asymmetric Grid */}
+      <section className="bg-celestial-dark py-40 px-[5%] relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-24 max-w-3xl">
+            <h2 className="text-4xl md:text-6xl font-display font-light text-white uppercase tracking-tight mb-8 leading-[1.1]">
+              The Aether
               <br />
-              our platform
+              <span className="font-bold italic text-gray-500">Foundation</span>
             </h2>
-            <p className="text-white/80 text-lg">
-              We verify every broker's credentials and confirm every listing before it appears. No ghost properties. No shortcuts.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
-            <div>
-              <div className="flex justify-center mb-6 text-white">
-                <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-display font-bold text-white uppercase mb-4 leading-snug">
-                Verified listings and<br />licensed brokers
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+            {/* Pillar 1 */}
+            <div className="md:col-span-6 bg-[#0f0f12] border border-white/5 p-12 md:p-16 group hover:border-celestial-gold/50 transition-colors duration-500">
+              <span className="text-6xl font-display font-bold text-white/5 block mb-8 group-hover:text-celestial-gold/20 transition-colors">01</span>
+              <h3 className="text-3xl font-display font-light text-white uppercase mb-6 leading-snug group-hover:text-celestial-gold transition-colors">
+                Authentic<br />Representation
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed px-4">
-                Each property is photographed and documented with architectural precision to give you a complete view before you visit.
+              <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+                Every broker holds a valid PRC license. We independently authenticate credentials and track successful transactions to ensure absolute professionalism.
               </p>
             </div>
-            <div>
-              <div className="flex justify-center mb-6 text-white">
-                <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-display font-bold text-white uppercase mb-4 leading-snug">
-                Hyper-realistic<br />property experience
+            
+            {/* Pillar 2 */}
+            <div className="md:col-span-6 bg-[#0f0f12] border border-white/5 p-12 md:p-16 mt-0 md:mt-24 group hover:border-celestial-gold/50 transition-colors duration-500">
+              <span className="text-6xl font-display font-bold text-white/5 block mb-8 group-hover:text-celestial-gold/20 transition-colors">02</span>
+              <h3 className="text-3xl font-display font-light text-white uppercase mb-6 leading-snug group-hover:text-celestial-gold transition-colors">
+                Rigorous<br />Verification
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed px-4">
-                Transparent pricing, clear terms, and direct communication with verified sellers protect every transaction from start to finish.
+              <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+                We physically inspect properties and confirm ownership before publication. Ghost listings and bait-and-switch tactics are systematically eliminated.
               </p>
             </div>
-            <div>
-              <div className="flex justify-center mb-6 text-white">
-                <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-display font-bold text-white uppercase mb-4 leading-snug">
-                Transparent buyer<br />protection
+            
+            {/* Pillar 3 */}
+            <div className="md:col-span-8 md:col-start-3 bg-[#0A0A0C] border border-white/5 p-12 md:p-16 mt-0 md:-mt-12 relative z-10 group hover:border-celestial-gold/50 transition-colors duration-500">
+              <span className="absolute top-12 right-12 text-8xl font-display font-bold text-white/5 group-hover:text-celestial-gold/10 transition-colors">03</span>
+              <h3 className="text-4xl font-display font-light text-white uppercase mb-6 leading-snug">
+                Transparent<br /><span className="font-bold italic">Economics</span>
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed px-4">
-                Our commitment to security and clarity sets us apart in the market.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center gap-6">
-            <Link href="/neighborhood-guides" className="bg-transparent border border-white/30 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/10 transition-colors text-sm">
-              Learn more
-            </Link>
-            <Link href="/properties" className="text-white font-semibold text-sm flex items-center gap-1 group">
-              Explore <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Numbers Section */}
-      <section className="bg-white py-32 px-[5%]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          <div>
-            <p className="text-black font-bold text-xs uppercase tracking-widest mb-6">
-              Numbers
-            </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-black uppercase tracking-tight mb-8 leading-tight">
-              The market speaks
-              <br />
-              for itself
-            </h2>
-            <p className="text-gray-600 text-lg mb-10 leading-relaxed">
-              Our platform has grown because buyers and brokers trust what we've built. These figures represent real transactions, real verification, and real peace of mind across the Philippine real estate market.
-            </p>
-            <div className="flex items-center gap-6">
-              <Link href="/neighborhood-guides" className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
-                Learn
-              </Link>
-              <Link href="/properties" className="text-black font-semibold text-sm flex items-center gap-1 group">
-                Explore <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-x-8 gap-y-16">
-            <div className="border-l-2 border-gray-200 pl-6">
-              <h3 className="text-5xl md:text-6xl font-bold text-black mb-4">
-                12,500+
-              </h3>
-              <p className="text-black font-bold text-xs uppercase tracking-widest">
-                Properties verified
-              </p>
-            </div>
-            <div className="border-l-2 border-gray-200 pl-6">
-              <h3 className="text-5xl md:text-6xl font-bold text-black mb-4">
-                850+
-              </h3>
-              <p className="text-black font-bold text-xs uppercase tracking-widest">
-                Licensed brokers
-              </p>
-            </div>
-            <div className="border-l-2 border-gray-200 pl-6">
-              <h3 className="text-5xl md:text-6xl font-bold text-black mb-4">
-                98%
-              </h3>
-              <p className="text-black font-bold text-xs uppercase tracking-widest">
-                Client satisfaction
-              </p>
-            </div>
-            <div className="border-l-2 border-gray-200 pl-6">
-              <h3 className="text-5xl md:text-6xl font-bold text-black mb-4">
-                3,200+
-              </h3>
-              <p className="text-black font-bold text-xs uppercase tracking-widest">
-                Successful transactions
+              <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+                Zero hidden fees. We mandate clear, comprehensive cost breakdowns prior to commitment. You maintain absolute control over the financial aspects of your acquisition.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Team Section */}
-      <section className="bg-white py-32 px-[5%] text-center">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-24">
-            <p className="text-black font-bold text-xs uppercase tracking-widest mb-6">
-              Leadership
-            </p>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-black uppercase tracking-tight mb-8">
-              Our team
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Built by people who understand Philippine real estate and the trust it demands
+      {/* 4. Executive Team - Editorial Portrait Grid */}
+      <section className="bg-[#0A0A0C] py-40 px-[5%] border-t border-white/5">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <span className="w-12 h-[1px] bg-celestial-gold"></span>
+                <p className="text-celestial-gold font-display text-xs uppercase tracking-[0.2em]">Leadership</p>
+              </div>
+              <h2 className="text-4xl md:text-6xl font-display font-light text-white uppercase tracking-tight leading-[1.1]">
+                The Architects
+                <br />
+                <span className="font-bold italic">Of Trust</span>
+              </h2>
+            </div>
+            <p className="text-gray-400 text-lg font-light leading-relaxed max-w-md border-l border-white/10 pl-6">
+              Built by visionaries who understand Philippine real estate and the rigorous standards it demands.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
             {[
-              { name: "Marcus Villanueva", role: "Founder, CEO", desc: "Former investment banker with fifteen years in Philippine property development and market strategy." },
-              { name: "Elena Santos", role: "Chief Operations", desc: "Managed compliance and broker networks across Southeast Asia. Ensures every listing meets our verification standards." },
-              { name: "David Reyes", role: "Head of Technology", desc: "Built secure platforms for financial services. Designed our verification and transaction systems from the ground up." },
-              { name: "Patricia Lim", role: "Chief Broker Relations", desc: "Licensed broker with two decades connecting serious buyers to verified properties across Metro Manila and beyond." },
-              { name: "Robert Cruz", role: "Director of Trust", desc: "Oversees verification protocols, broker credentials, and the systems that keep scams off our platform entirely." },
-              { name: "Sofia Mercado", role: "Head of Design", desc: "Creates the clean, data-forward experience that makes finding verified properties feel simple and trustworthy." },
+              { name: "Marcus Villanueva", role: "Founder, CEO", desc: "Former investment banker with fifteen years in Philippine property development." },
+              { name: "Elena Santos", role: "Chief Operations", desc: "Managed compliance and broker networks across Southeast Asia." },
+              { name: "David Reyes", role: "Head of Technology", desc: "Designed our verification and transaction systems from the ground up." },
+              { name: "Patricia Lim", role: "Chief Broker Relations", desc: "Licensed broker with two decades connecting serious buyers to verified properties." },
+              { name: "Robert Cruz", role: "Director of Trust", desc: "Oversees verification protocols and the systems that keep scams off our platform." },
+              { name: "Sofia Mercado", role: "Head of Design", desc: "Creates the clean, data-forward experience that makes finding properties seamless." },
             ].map((member, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-20 h-20 bg-gray-100 rounded-full mb-6 flex items-center justify-center text-gray-400">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" /></svg>
+              <div key={i} className="group cursor-default">
+                <div className="w-full aspect-square bg-[#0f0f12] mb-8 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <div className="absolute inset-0 bg-celestial-gold mix-blend-color-burn opacity-20 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
+                  <img src={`https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600&sig=${i}`} alt={member.name} className="w-full h-full object-cover opacity-80" />
                 </div>
-                <h3 className="text-xl font-bold text-black mb-1">{member.name}</h3>
-                <p className="text-gray-500 text-sm mb-4">{member.role}</p>
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed px-4">
+                <h3 className="text-2xl font-display font-light text-white uppercase mb-2 group-hover:text-celestial-gold transition-colors">{member.name}</h3>
+                <p className="text-gray-500 font-display text-[10px] uppercase tracking-widest mb-4">{member.role}</p>
+                <div className="w-8 h-[1px] bg-white/20 mb-4 group-hover:bg-celestial-gold transition-colors"></div>
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
                   {member.desc}
                 </p>
-                <div className="flex gap-4 text-gray-400">
-                  <a href="#" className="hover:text-black transition-colors"><FaLinkedinIn size={16} /></a>
-                  <a href="#" className="hover:text-black transition-colors"><FaXTwitter size={14} /></a>
-                  <a href="#" className="hover:text-black transition-colors"><FaGlobe size={16} /></a>
+                <div className="flex gap-4 text-gray-500">
+                  <a href="#" className="hover:text-white transition-colors"><FaLinkedinIn size={16} /></a>
+                  <a href="#" className="hover:text-white transition-colors"><FaXTwitter size={14} /></a>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="mb-32">
-            <h3 className="text-3xl font-display font-bold text-black uppercase mb-6">
-              We're hiring
-            </h3>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-              Join a team building trust in Philippine real estate. We're looking for brokers, engineers, and operations specialists.
-            </p>
-            <Link href="/contact" className="inline-block bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
-              View positions
-            </Link>
-          </div>
-
-          <div className="text-center pt-24 border-t border-gray-200">
-            <h4 className="text-black font-display font-bold text-xs tracking-widest uppercase mb-16">
-              Trusted by Philippine real estate leaders
-            </h4>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12 items-center justify-items-center">
-              <div className="flex items-center gap-2 font-bold text-xl"><svg className="w-6 h-6" viewBox="0 0 24 24" fill="black"><path d="M12 2L2 7l10 5 10-5-10-5zm0 10l-10 5 10 5 10-5-10-5z"/></svg> Webflow</div>
-              <div className="flex items-center gap-2 font-bold text-xl"><svg className="w-6 h-6" viewBox="0 0 24 24" fill="black"><path d="M12 2L2 22h20L12 2z"/></svg> Relume</div>
-              <div className="flex items-center gap-2 font-bold text-xl"><svg className="w-6 h-6" viewBox="0 0 24 24" fill="black"><path d="M12 2L2 7l10 5 10-5-10-5zm0 10l-10 5 10 5 10-5-10-5z"/></svg> Webflow</div>
-              <div className="flex items-center gap-2 font-bold text-xl"><svg className="w-6 h-6" viewBox="0 0 24 24" fill="black"><path d="M12 2L2 22h20L12 2z"/></svg> Relume</div>
-              <div className="flex items-center gap-2 font-bold text-xl"><svg className="w-6 h-6" viewBox="0 0 24 24" fill="black"><path d="M12 2L2 7l10 5 10-5-10-5zm0 10l-10 5 10 5 10-5-10-5z"/></svg> Webflow</div>
-              <div className="flex items-center gap-2 font-bold text-xl"><svg className="w-6 h-6" viewBox="0 0 24 24" fill="black"><path d="M12 2L2 22h20L12 2z"/></svg> Relume</div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* 6. Real Stories & CTA Section */}
-      <div className="flex flex-col">
-        {/* Real Stories (Light Gray Half) */}
-        <section className="bg-[#EAEAEA] py-24 px-[5%]">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-black uppercase mb-4">
-                Real stories
-              </h2>
-              <p className="text-gray-600 text-lg">
-                From buyers who found their place
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { name: "Maria Santos", role: "OFW, Dubai", text: "'I found my dream condo in Makati without a single worry. The verification process was thorough and the broker was transparent about everything.'" },
-                { name: "James Reyes", role: "Business owner, Singapore", text: "'After years abroad, I needed a property I could trust. This platform delivered exactly that with licensed brokers and real listings.'" },
-                { name: "Angela Cruz", role: "Executive, Manila", text: "'The neighborhood guides and property details were so thorough, I felt like I'd already walked through the place before visiting.'" },
-              ].map((review, i) => (
-                <div key={i} className="p-10 flex flex-col justify-between border-t border-b border-l border-r border-gray-300 relative">
-                  {/* Decorative corner markers typical of this design style */}
-                  <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-gray-400"></div>
-                  <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-gray-400"></div>
-                  <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gray-400"></div>
-                  <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-gray-400"></div>
-                  
-                  <div>
-                    <div className="flex gap-1 mb-6 text-black">
-                      {[...Array(5)].map((_, idx) => (
-                        <BiSolidStar key={idx} size={24} />
-                      ))}
-                    </div>
-                    <p className="text-gray-800 text-lg mb-10 leading-relaxed font-body">
-                      {review.text}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" /></svg>
-                    </div>
-                    <div>
-                      <p className="text-black font-bold text-sm">{review.name}</p>
-                      <p className="text-gray-600 text-xs">{review.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* 5. Monolithic CTA */}
+      <section className="relative py-40 overflow-hidden bg-celestial-dark border-t border-white/5">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img
+            src="/images/hero.png"
+            className="w-full h-full object-cover grayscale blur-sm"
+            alt="Abstract architecture"
+            onError={(e) => e.target.src = "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=2000"}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-celestial-dark via-celestial-dark/80 to-transparent"></div>
+        </div>
+        
+        <div className="max-w-[1400px] mx-auto px-[5%] relative z-10 text-center">
+          <p className="text-celestial-gold font-display text-xs uppercase tracking-[0.2em] mb-6">Careers & Growth</p>
+          <h2 className="text-5xl md:text-7xl font-display font-light text-white uppercase tracking-tighter leading-[1] mb-12">
+            Join The
+            <br />
+            <span className="font-bold italic">Vanguard</span>
+          </h2>
+          <p className="text-gray-300 text-xl font-light mb-16 max-w-2xl mx-auto">
+            We are actively recruiting licensed brokers, engineers, and operations specialists to redefine the Philippine real estate market.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <Link href="/contact" className="px-12 py-5 bg-white text-celestial-dark font-display uppercase tracking-widest text-xs font-bold hover:bg-celestial-gold hover:text-white transition-colors duration-300">
+              View Positions
+            </Link>
           </div>
-        </section>
-
-        {/* Final CTA (Dark Blue Half) */}
-        <section className="bg-[#0A1118] py-32 px-[5%] text-center">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white uppercase mb-6 tracking-wide">
-              Ready to find your<br />property
-            </h2>
-            <p className="text-white/80 text-lg mb-10">
-              Browse verified listings or connect with a licensed broker today
-            </p>
-            <div className="flex justify-center gap-4 mb-24">
-              <Link href="/properties" className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
-                Explore
-              </Link>
-              <Link href="/contact" className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
-                Contact
-              </Link>
-            </div>
-            
-            <div className="w-full h-[500px] bg-[#2E3640] rounded-xl flex items-center justify-center overflow-hidden">
-              <svg className="w-40 h-40 text-black/20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
-              </svg>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <Footer10 />
     </div>

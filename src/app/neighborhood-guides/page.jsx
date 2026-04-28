@@ -6,6 +6,7 @@ import { Footer10 } from "@/components/Footer10";
 import { motion } from "framer-motion";
 import { BiSolidStar } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -45,12 +46,12 @@ export default function Page() {
           transition={{ delay: 0.3 }}
           className="flex justify-center gap-4"
         >
-          <button className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
+          <Link href="/properties" className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
             Explore
-          </button>
-          <button className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
+          </Link>
+          <Link href="/about-us" className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
             Learn
-          </button>
+          </Link>
         </motion.div>
       </section>
 
@@ -117,12 +118,12 @@ export default function Page() {
           </div>
 
           <div className="flex justify-center items-center gap-6">
-            <button className="bg-transparent border border-white/30 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/10 transition-colors text-sm">
+            <Link href="/properties" className="bg-transparent border border-white/30 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/10 transition-colors text-sm">
               Explore
-            </button>
-            <button className="text-white font-semibold text-sm flex items-center gap-1 group">
+            </Link>
+            <Link href="/about-us" className="text-white font-semibold text-sm flex items-center gap-1 group">
               Learn <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -170,7 +171,7 @@ export default function Page() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 text-left">
             {/* Card 1 */}
-            <div className="flex flex-col group cursor-pointer">
+            <Link href="/neighborhood-guides" className="flex flex-col group cursor-pointer">
               <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center mb-6 overflow-hidden">
                 <svg className="w-16 h-16 text-gray-300 group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
@@ -195,10 +196,10 @@ export default function Page() {
                   Read more <RxChevronRight size={16} />
                 </span>
               </div>
-            </div>
+            </Link>
 
             {/* Card 2 */}
-            <div className="flex flex-col group cursor-pointer">
+            <Link href="/neighborhood-guides" className="flex flex-col group cursor-pointer">
               <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center mb-6 overflow-hidden">
                 <svg className="w-16 h-16 text-gray-300 group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
@@ -225,10 +226,10 @@ export default function Page() {
                   Read more <RxChevronRight size={16} />
                 </span>
               </div>
-            </div>
+            </Link>
 
             {/* Card 3 */}
-            <div className="flex flex-col group cursor-pointer">
+            <Link href="/neighborhood-guides" className="flex flex-col group cursor-pointer">
               <div className="aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center mb-6 overflow-hidden">
                 <svg className="w-16 h-16 text-gray-300 group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
@@ -255,12 +256,12 @@ export default function Page() {
                   Read more <RxChevronRight size={16} />
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
 
-          <button className="bg-transparent border border-gray-300 text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-50 transition-colors text-sm">
+          <Link href="/neighborhood-guides" className="inline-block bg-transparent border border-gray-300 text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-50 transition-colors text-sm">
             View all
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -325,12 +326,12 @@ export default function Page() {
               Connect with a verified broker who knows your neighborhood inside and out
             </p>
             <div className="flex justify-center gap-4 mb-24">
-              <button className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
+              <Link href="/contact" className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
                 Contact
-              </button>
-              <button className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
+              </Link>
+              <Link href="/properties" className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
                 Browse
-              </button>
+              </Link>
             </div>
             
             <div className="w-full h-[500px] bg-[#2E3640] rounded-xl flex items-center justify-center overflow-hidden">

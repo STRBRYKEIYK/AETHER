@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
@@ -23,57 +24,57 @@ export function Footer10() {
           <div className="lg:col-span-2 flex flex-col gap-4">
             <h4 className="font-bold mb-2">Explore</h4>
             {[
-              "Properties",
-              "Neighborhoods",
-              "Guides",
-              "Brokers",
-              "Company",
+              { label: "Properties", href: "/properties" },
+              { label: "Neighborhoods", href: "/neighborhood-guides" },
+              { label: "Guides", href: "/neighborhood-guides" },
+              { label: "Brokers", href: "/about-us" },
+              { label: "Company", href: "/about-us" },
             ].map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.label}
+                href={item.href}
                 className="text-white/70 hover:text-white transition-colors text-sm"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-4">
             <h4 className="font-bold mb-2">About</h4>
             {[
-              "Team",
-              "Careers",
-              "Press",
-              "Contact",
-              "Support",
+              { label: "Team", href: "/about-us" },
+              { label: "Careers", href: "/about-us" },
+              { label: "Press", href: "#" },
+              { label: "Contact", href: "/contact" },
+              { label: "Support", href: "/contact" },
             ].map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.label}
+                href={item.href}
                 className="text-white/70 hover:text-white transition-colors text-sm"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-4">
             <h4 className="font-bold mb-2">FAQ</h4>
             {[
-              "Resources",
-              "Blog",
-              "Verification",
-              "Security",
-              "Trust",
+              { label: "Resources", href: "#" },
+              { label: "Blog", href: "#" },
+              { label: "Verification", href: "/about-us" },
+              { label: "Security", href: "/about-us" },
+              { label: "Trust", href: "/about-us" },
             ].map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.label}
+                href={item.href}
                 className="text-white/70 hover:text-white transition-colors text-sm"
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </div>
 

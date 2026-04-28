@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { BiSolidStar } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
 import { FaLinkedinIn, FaXTwitter, FaGlobe } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -46,12 +47,12 @@ export default function Page() {
           transition={{ delay: 0.3 }}
           className="flex justify-center gap-4"
         >
-          <button className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
+          <Link href="/properties" className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
             Explore
-          </button>
-          <button className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
+          </Link>
+          <Link href="/neighborhood-guides" className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
             Learn more
-          </button>
+          </Link>
         </motion.div>
       </section>
 
@@ -65,12 +66,12 @@ export default function Page() {
             We exist to eliminate fear from Philippine real estate. Every listing is verified, every broker is licensed, and every transaction is transparent.
           </h2>
           <div className="flex justify-center items-center gap-6">
-            <button className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
+            <Link href="/neighborhood-guides" className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
               Learn more
-            </button>
-            <button className="text-black font-semibold text-sm flex items-center gap-1 group">
+            </Link>
+            <Link href="/properties" className="text-black font-semibold text-sm flex items-center gap-1 group">
               Explore <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -137,12 +138,12 @@ export default function Page() {
           </div>
 
           <div className="flex justify-center items-center gap-6">
-            <button className="bg-transparent border border-white/30 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/10 transition-colors text-sm">
+            <Link href="/neighborhood-guides" className="bg-transparent border border-white/30 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-white/10 transition-colors text-sm">
               Learn more
-            </button>
-            <button className="text-white font-semibold text-sm flex items-center gap-1 group">
+            </Link>
+            <Link href="/properties" className="text-white font-semibold text-sm flex items-center gap-1 group">
               Explore <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -163,12 +164,12 @@ export default function Page() {
               Our platform has grown because buyers and brokers trust what we've built. These figures represent real transactions, real verification, and real peace of mind across the Philippine real estate market.
             </p>
             <div className="flex items-center gap-6">
-              <button className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
+              <Link href="/neighborhood-guides" className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
                 Learn
-              </button>
-              <button className="text-black font-semibold text-sm flex items-center gap-1 group">
+              </Link>
+              <Link href="/properties" className="text-black font-semibold text-sm flex items-center gap-1 group">
                 Explore <RxChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -258,9 +259,9 @@ export default function Page() {
             <p className="text-gray-600 mb-8 max-w-lg mx-auto">
               Join a team building trust in Philippine real estate. We're looking for brokers, engineers, and operations specialists.
             </p>
-            <button className="bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
+            <Link href="/contact" className="inline-block bg-transparent border border-gray-300 text-black font-semibold px-6 py-2.5 rounded-full hover:bg-gray-50 transition-colors text-sm">
               View positions
-            </button>
+            </Link>
           </div>
 
           <div className="text-center pt-24 border-t border-gray-200">
@@ -341,12 +342,12 @@ export default function Page() {
               Browse verified listings or connect with a licensed broker today
             </p>
             <div className="flex justify-center gap-4 mb-24">
-              <button className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
+              <Link href="/properties" className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors text-sm">
                 Explore
-              </button>
-              <button className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
+              </Link>
+              <Link href="/contact" className="bg-transparent border border-white/30 text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors text-sm">
                 Contact
-              </button>
+              </Link>
             </div>
             
             <div className="w-full h-[500px] bg-[#2E3640] rounded-xl flex items-center justify-center overflow-hidden">

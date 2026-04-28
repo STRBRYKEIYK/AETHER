@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { RxChevronDown } from "react-icons/rx";
 import Link from "next/link";
+import { AetherLogo } from "@/components/AetherLogo";
 
 export function Navbar6() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,14 +28,8 @@ export function Navbar6() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-celestial-gold to-dodger animate-pulse blur-[2px]"></div>
-            <div className="absolute inset-0 w-10 h-10 rounded-full border border-white/20"></div>
-          </div>
-          <span className="font-display text-2xl font-bold tracking-[0.3em] text-white group-hover:text-glow transition-all">
-            AETHER
-          </span>
+        <Link href="/" className="group">
+          <AetherLogo className="transition-transform duration-700 group-hover:scale-105" />
         </Link>
 
         {/* Desktop Menu */}

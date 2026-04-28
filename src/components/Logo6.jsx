@@ -15,16 +15,17 @@ export function Logo6() {
           Trusted by Elite Institutions
         </motion.p>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-           {/* We can use high-quality SVGs or text placeholders for a premium minimalist look */}
-           {["FORBES", "VOGUE", "ARCH-DIGEST", "SOTHEBYS", "MOMA", "ROBB-REPORT"].map((name) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 items-center opacity-30 hover:opacity-60 transition-all duration-1000">
+           {[
+             "Forbes", "Vogue", "ArchDigest", "Sotheby's", "MoMA", "RobbReport"
+           ].map((brand) => (
              <motion.div 
-               key={name}
-               whileHover={{ scale: 1.1, opacity: 1 }}
+               key={brand}
+               whileHover={{ scale: 1.05 }}
                className="flex justify-center"
              >
-               <span className="font-display font-black text-xl md:text-2xl text-white tracking-tighter">
-                 {name}
+               <span className="font-display text-lg md:text-xl text-white/40 hover:text-white tracking-[0.2em] uppercase transition-colors duration-500">
+                 {brand}
                </span>
              </motion.div>
            ))}

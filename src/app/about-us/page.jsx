@@ -3,6 +3,7 @@
 import React from "react";
 import { Navbar6 } from "@/components/Navbar6";
 import { Footer10 } from "@/components/Footer10";
+import { Logo6 } from "@/components/Logo6";
 import { motion } from "framer-motion";
 import { RxChevronRight, RxArrowRight } from "react-icons/rx";
 import { FaLinkedinIn, FaXTwitter, FaGlobe } from "react-icons/fa6";
@@ -209,6 +210,7 @@ export default function Page() {
         </div>
       </section>
 
+      <Logo6 />
       <Footer10 />
     </div>
   );

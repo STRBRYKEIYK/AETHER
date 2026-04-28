@@ -10,19 +10,21 @@ import {
 } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 
+import { AetherLogo } from "@/components/AetherLogo";
+
 export function Footer10() {
   return (
-    <footer className="bg-[#0A0908] py-12 px-[5%] text-white font-body">
-      <div className="max-w-7xl mx-auto border border-white/10 rounded-2xl p-8 md:p-12 lg:p-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
-          <div className="lg:col-span-2">
-            <span className="font-display italic text-3xl font-bold tracking-tight">
-              Logo
-            </span>
+    <footer className="px-[5%] py-12 md:py-16 lg:py-24 bg-celestial-dark border-t border-white/5 selection:bg-celestial-gold selection:text-celestial-dark">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+          <div className="lg:col-span-3">
+            <Link href="/" className="inline-block group">
+              <AetherLogo className="scale-110 origin-left" />
+            </Link>
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <h4 className="font-bold mb-2">Explore</h4>
+            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-white mb-2">Explore</h4>
             {[
               { label: "Properties", href: "/properties" },
               { label: "Neighborhoods", href: "/neighborhood-guides" },
@@ -33,7 +35,7 @@ export function Footer10() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-white/70 hover:text-white transition-colors text-sm"
+                className="text-white/50 hover:text-celestial-gold transition-colors text-xs uppercase tracking-wider"
               >
                 {item.label}
               </Link>
@@ -41,7 +43,7 @@ export function Footer10() {
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <h4 className="font-bold mb-2">About</h4>
+            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-white mb-2">About</h4>
             {[
               { label: "Team", href: "/about-us" },
               { label: "Careers", href: "/about-us" },
@@ -52,7 +54,7 @@ export function Footer10() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-white/70 hover:text-white transition-colors text-sm"
+                className="text-white/50 hover:text-celestial-gold transition-colors text-xs uppercase tracking-wider"
               >
                 {item.label}
               </Link>
@@ -60,9 +62,9 @@ export function Footer10() {
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <h4 className="font-bold mb-2">FAQ</h4>
+            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-white mb-2">Resources</h4>
             {[
-              { label: "Resources", href: "#" },
+              { label: "FAQ", href: "#" },
               { label: "Blog", href: "#" },
               { label: "Verification", href: "/about-us" },
               { label: "Security", href: "/about-us" },
@@ -71,35 +73,31 @@ export function Footer10() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-white/70 hover:text-white transition-colors text-sm"
+                className="text-white/50 hover:text-celestial-gold transition-colors text-xs uppercase tracking-wider"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          <div className="lg:col-span-4 flex flex-col gap-4">
-            <h4 className="font-bold mb-2">Updates</h4>
-            <p className="text-white/70 text-sm mb-4 leading-relaxed">
+          <div className="lg:col-span-3 flex flex-col gap-4">
+            <h4 className="font-display text-sm font-bold uppercase tracking-widest text-white mb-2">Updates</h4>
+            <p className="text-white/40 text-xs mb-4 leading-relaxed">
               Get the latest news and property listings delivered straight to
               your inbox each week.
             </p>
             <form className="flex items-end gap-4 mb-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex-1 border-b border-white/30 pb-2">
+              <div className="flex-1 border-b border-white/20 pb-2">
                 <input
                   type="email"
                   placeholder="Enter email"
-                  className="w-full bg-transparent text-sm text-white focus:outline-none placeholder:text-white/50"
+                  className="w-full bg-transparent text-xs text-white focus:outline-none placeholder:text-white/30"
                 />
               </div>
-              <button className="px-6 py-2 border border-white/30 rounded-full text-sm font-semibold hover:bg-white hover:text-black transition-colors">
+              <button className="px-6 py-2 border border-white/20 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
                 Join
               </button>
             </form>
-            <p className="text-white/50 text-[10px] leading-tight max-w-xs">
-              By subscribing you agree to our Privacy Policy and consent to
-              receive updates.
-            </p>
           </div>
         </div>
       </div>

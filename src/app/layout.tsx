@@ -17,6 +17,9 @@ const bodyFont = Montserrat({
 export const metadata: Metadata = {
   title: "AETHER | Celestial Luxury Real Estate",
   description: "Experience the pinnacle of Philippine real estate. Beyond the horizon.",
+  icons: {
+    icon: "/brand/favicon.png",
+  },
 };
 
 export default function RootLayout({
